@@ -1,0 +1,21 @@
+package net.email;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+
+public class FileDelete {
+	public static void main(String[] args) throws FileNotFoundException {
+		File temp;
+		temp = new File("C:\\Users\\MSFAT\\OneDrive\\Desktop\\s1.jpg");
+		RandomAccessFile raf;
+		try {
+			raf = new RandomAccessFile(temp, "rw");
+			raf.close();
+			temp.delete();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}
